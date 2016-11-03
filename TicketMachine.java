@@ -99,4 +99,39 @@ public class TicketMachine
         balance = 0;
         return amountToRefund;
     }
+    
+    /**
+     * 0745 1.  Añade a la clase TicketMachine un método llamado emptyMachine que al invocarlo vacíe la máquina de todas las monedas que hay en 
+     * ella y que devuelva la cantidad de dinero que había en la máquina.
+     */
+    public int emptyMachine(){
+        int recaudacion = 0;
+         recaudacion = recaudacion + total;
+         total = 0;
+        return recaudacion;
+        
+    
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
