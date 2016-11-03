@@ -17,15 +17,18 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // para facilitar máquina con premio
+    private boolean conPremio;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost, boolean maquinaNormal)
     {
         price = cost;
         balance = 0;
         total = 0;
+        conPremio = maquinaNormal;
     }
 
     /**
@@ -67,7 +70,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(balance >= price) {
+        if(balance >= price && conPremio == true) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -80,6 +83,26 @@ public class TicketMachine
             total = total + price;
             // Reduce the balance by the prince.
             balance = balance - price;
+        }
+        else if(balance >= price && conPremio == false) {
+            // Simulate the printing of a ticket.
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + price + " cents.");
+            System.out.println("##################");
+            System.out.println();
+
+            // Update the total collected with the price.
+            total = total + price;
+            // Reduce the balance by the prince.
+            balance = balance - price;
+            System.out.println("******************************************");
+            System.out.println("##################");
+            System.out.println("# Ticket");
+            System.out.println("# BILLETE DE REGALO. !!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("##################");
+            System.out.println();
         }
         else {
             System.out.println("You must insert at least: " +
